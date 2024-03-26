@@ -1,0 +1,149 @@
+vboxuser@Ubuntu:~$ sudo groupadd BSIT_Student
+vboxuser@Ubuntu:~$ sudo groupadd BSCS_Student
+vboxuser@Ubuntu:~$ for username in IT1 IT2 IT3 IT4 IT5; do
+> sudo useradd $username
+> sudo passwd $username
+> done
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+vboxuser@Ubuntu:~$ for username in CS1 CS2 CS3 CS4 CS5; do
+> sudo useradd $username
+> sudo passwd $username
+> done
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+New password: 
+BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic
+Retype new password: 
+passwd: password updated successfully
+vboxuser@Ubuntu:~$ for username in IT1 IT2 IT3 IT4 IT5; do
+> sudo usermod -aG BSIT_Student $username
+> done
+vboxuser@Ubuntu:~$ for username in CS1 CS2 CS3 CS4 CS5; do
+> sudo usermod -aG BSCS_Student $username
+> done
+vboxuser@Ubuntu:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+sudo:x:27:vboxuser
+audio:x:29:pulse
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+crontab:x:104:
+messagebus:x:105:
+systemd-timesync:x:106:
+input:x:107:
+sgx:x:108:
+kvm:x:109:
+render:x:110:
+syslog:x:111:
+tss:x:112:
+bluetooth:x:113:
+ssl-cert:x:114:
+uuidd:x:115:
+systemd-oom:x:116:
+tcpdump:x:117:
+_ssh:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+nm-openvpn:x:126:
+scanner:x:127:saned
+saned:x:128:
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:
+vboxuser:x:1000:
+sambashare:x:135:
+BSIT_Student:x:1001:IT1,IT2,IT3,IT4,IT5
+BSCS_Student:x:1002:CS1,CS2,CS3,CS4,CS5
+IT1:x:1003:
+IT2:x:1004:
+IT3:x:1005:
+IT4:x:1006:
+IT5:x:1007:
+CS1:x:1008:
+CS2:x:1009:
+CS3:x:1010:
+CS4:x:1011:
+CS5:x:1012:
+vboxuser@Ubuntu:~$ getent group BSIT_Student | cut -d: -f4
+IT1,IT2,IT3,IT4,IT5
+vboxuser@Ubuntu:~$ getent group BSCS_Student | cut -d: -f4
+CS1,CS2,CS3,CS4,CS5
+vboxuser@Ubuntu:~$ 
